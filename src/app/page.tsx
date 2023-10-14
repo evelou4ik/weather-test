@@ -2,7 +2,9 @@ import BasicTemplateProvider from "@/templates/BasicTemplatesProvider";
 import { UsersList } from "@/components/index";
 import ConfirmedUsersList from "@/components/user/ConfirmedUsersList";
 import { LocalStorageProvider } from "@/templates/LocalStorageContext";
-import Map from "@/components/Map/Map";
+import dynamic from "next/dynamic"
+
+const Map = dynamic(() => import("@/components/Map/Map"), { ssr:false })
 
 export default function Home() {
   return (
